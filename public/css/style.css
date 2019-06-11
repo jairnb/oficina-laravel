@@ -1,0 +1,26 @@
+body{
+    margin-top: 86px!important;
+}
+
+#system_login{
+    width: 100px;
+    border-radius: 0px;
+    background-color:#96a4a5;
+    color: white;
+    border: 2px rgb(230, 73, 58) solid;
+}
+
+#system_login:hover{
+    background-color: white;
+    color: rgb(230, 73, 58);
+    border: 2px #96a4a5 solid;
+    
+}
+
+.link{
+    color:rgb(230, 73, 58)!important;
+    
+}.link:hover{
+    color: #96a4a5!important;
+}
+
