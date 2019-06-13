@@ -8,3 +8,4 @@ class Client extends Model
 {
     protected $fillable = ['name', 'phone', 'nif', 'email'];
 }
+

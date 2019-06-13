@@ -143,7 +143,7 @@ return [
         ],
         [
             'text'        => 'Clientes',
-            'url'         => 'admin/pages',
+            'url'         => 'client',
             'icon'        => 'money',
         ],
         [

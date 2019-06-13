@@ -32,5 +32,6 @@ Auth::routes();
 // Route::get('material/create', 'MaterialController@create')->name('material.create');
 // Route::post('material', 'MaterialController@store')->name('material.store');
 Route::resource('material', 'MaterialController');
+Route::resource('client', 'ClientController');
 Route::resource('dashboard', 'DashboardController');
 
