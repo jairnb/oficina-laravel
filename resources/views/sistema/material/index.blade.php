@@ -7,13 +7,15 @@
 @stop
 
 @section('content')
+
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-            <button class="btn btn-info pull-right mr-4" data-toggle="modal" data-target="#createMaterial">
-                <i class="fa fa-plus"></i> Adicionar
-            </button>           
+            {{-- <button class="btn btn-info d-block" data-toggle="modal" data-target="#createMaterial">
+                <i class="fa fa-plus"></i> Adicionar Material
+            </button>            --}}
+            <a href="{{ route('material.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> Adicionar Material</a>
         </div>
 
         <div class="box-body">
@@ -35,8 +37,13 @@
                         <td>{{$material->stock}}</td>
                         <td>{{$material->description}}</td>
                         <td>
-                            <a href="#"> <i class="fa fa-pencil-square-o oficina-icone-atu"></i> </a>
-                            <a href="#"> <i class="fa fa-trash oficina-icone-del"></i> </a>
+                            <a href="{{url('material/'.$material->id.'/edit')}}"> <i class="fa fa-pencil-square-o oficina-icone-atu"></i> </a>
+                            
+                            <form action="{{ url('material/'.$material->id)}}" class="pull-right" method="post">
+                                {{csrf_field()}}
+                                {{ method_field('DELETE') }}
+                                <button type="submit"> <i class="fa fa-trash oficina-icone-del"></i> </button>
+                            </form>
                         </td>
                     </tr>
                 @empty
@@ -60,11 +67,11 @@
             </table>
         </div>
 
-      </div>
+      
     </div>
 </div>
 
-@include('sistema.material.form')
+{{-- @include('sistema.material.form') --}}
 
 
 @stop
@@ -75,14 +82,15 @@
         $('#example1').DataTable()
         $('#example2').DataTable({
             'paging'      : true,
-            'lengthChange': false,
-            'searching'   : false,
-            'ordering'    : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : false,
             'info'        : true,
-            'autoWidth'   : false
+            'autoWidth'   : true
         })
         })
     </script>
+
 @stop
 @Push('https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js')
 

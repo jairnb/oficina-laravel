@@ -18,7 +18,7 @@ class CreateMaterialsTable extends Migration
             $table->string('name');
             $table->double('price');
             $table->integer('stock');
-            $table->string('description')->nullalble();
+            $table->string('description');
             $table->timestamps();
         });
     }

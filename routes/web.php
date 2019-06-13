@@ -28,6 +28,9 @@ Route::get('teste', function () {
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('material', 'MaterialController@index')->name('material.index');
+// Route::get('material/create', 'MaterialController@create')->name('material.create');
+// Route::post('material', 'MaterialController@store')->name('material.store');
 Route::resource('material', 'MaterialController');
 Route::resource('dashboard', 'DashboardController');
 

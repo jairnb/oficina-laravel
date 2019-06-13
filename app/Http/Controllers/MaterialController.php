@@ -14,7 +14,7 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materials = Material::All();
+        $materials = Material::latest('created_at')->get();
         return view('sistema.material.index', compact('materials'));
     }
 
@@ -36,7 +36,10 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        // dd($data);
+        Material::create($data);
+        return redirect('material');      
     }
 
     /**
@@ -58,7 +61,9 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $material = Material::findOrFail($id);
+
+        return view('sistema.material.edit', compact('material'));
     }
 
     /**
@@ -70,7 +75,9 @@ class MaterialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $material = Material::findOrFail($id);
+        $material->update($request->all());
+        return redirect('material');   
     }
 
     /**
@@ -81,6 +88,8 @@ class MaterialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $material = Material::findOrFail($id);
+        $material->delete();
+        return redirect('material');   
     }
 }

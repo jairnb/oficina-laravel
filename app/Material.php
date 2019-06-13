@@ -10,3 +10,4 @@ class Material extends Model
         'name', 'price', 'description', 'stock'
     ];
 }
+
