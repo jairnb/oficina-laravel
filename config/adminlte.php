@@ -116,8 +116,8 @@ return [
         ],
         [
             'text'        => 'Serviços',
-            'url'         => 'admin/pages',
-            'icon'        => 'car',
+            'url'         => 'servico',
+            'icon'        => 'ticket',
             // 'submenu'     => [
             //     [
             //         'text'        => 'Serviços',
@@ -153,7 +153,7 @@ return [
         ],
         [
             'text'        => 'Funcionarios',
-            'url'         => 'admin/pages',
+            'url'         => 'funcionario',
             'icon'        => 'users',
         ],
         [
@@ -163,12 +163,17 @@ return [
         ],
         [
             'text'        => 'Peças',
-            'url'         => 'admin/pages',
+            'url'         => 'peca',
             'icon'        => 'wrench',
         ],
         [
+            'text'        => 'Caros',
+            'url'         => 'peca',
+            'icon'        => 'car',
+        ],
+        [
             'text'        => 'Utilizadores',
-            'url'         => 'admin/pages',
+            'url'         => 'utilizador',
             'icon'        => 'user-plus',
         ],
         

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Peca;
 use Illuminate\Http\Request;
-use App\Client;
 
-class ClientController extends Controller
+class PecaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::latest('created_at')->get();
-        return view('sistema.client.index', compact('clients'));
+        $pecas = Peca::latest('created_at')->get();
+        return view('sistema.peca.index', compact('pecas'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('sistema.client.create');
+        return view('sistema.peca.create');
     }
 
     /**
@@ -37,17 +37,17 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Client::create($data);
-        return redirect('client'); 
+        Peca::create($data);
+        return redirect('peca');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Peca  $peca
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Peca $peca)
     {
         //
     }
@@ -55,10 +55,10 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Peca  $peca
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Peca $peca)
     {
         //
     }
@@ -67,10 +67,10 @@ class ClientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Peca  $peca
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Peca $peca)
     {
         //
     }
@@ -78,10 +78,10 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Peca  $peca
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Peca $peca)
     {
         //
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Funcionario;
 use Illuminate\Http\Request;
-use App\Client;
 
-class ClientController extends Controller
+class FuncionarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,20 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::latest('created_at')->get();
-        return view('sistema.client.index', compact('clients'));
+        $funcionarios = Funcionario::latest('created_at')->get();
+        // foreach ($variable as $key => $value) {
+        //     # code...
+        // }
+        // foreach ($funcionarios as $estado => $funcionario) {            
+        //     if( $funcionario->estado == '1'){
+        //         $funcionarios[$estado] = 'Activo';
+        //     }
+        //     else if( $funcionario->estado == '0'){
+        //         $funcionarios[$estado] = 'Desativo';
+        //     }
+        // }
+                   
+        return view('sistema.funcionario.index', compact('funcionarios'));
     }
 
     /**
@@ -25,7 +37,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('sistema.client.create');
+        return view('sistema.funcionario.create');
     }
 
     /**
@@ -37,17 +49,17 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Client::create($data);
-        return redirect('client'); 
+        Funcionario::create($data);
+        return redirect('funcionario'); 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Funcionario $funcionario)
     {
         //
     }
@@ -55,10 +67,10 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Funcionario $funcionario)
     {
         //
     }
@@ -67,10 +79,10 @@ class ClientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Funcionario $funcionario)
     {
         //
     }
@@ -78,10 +90,10 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Funcionario $funcionario)
     {
         //
     }

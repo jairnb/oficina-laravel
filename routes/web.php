@@ -16,14 +16,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('home', function () {
-    return view('sistema.home');
-});
+Route::get('home', 'DashboardController@index')->middleware('auth');
 
 
-Route::get('teste', function () {
-    return 'testess';
-})->name('teste');
 
 Auth::routes();
 
@@ -31,7 +26,11 @@ Auth::routes();
 // Route::get('material', 'MaterialController@index')->name('material.index');
 // Route::get('material/create', 'MaterialController@create')->name('material.create');
 // Route::post('material', 'MaterialController@store')->name('material.store');
-Route::resource('material', 'MaterialController');
-Route::resource('client', 'ClientController');
-Route::resource('dashboard', 'DashboardController');
+Route::resource('material', 'MaterialController')->middleware('auth');
+Route::resource('client', 'ClientController')->middleware('auth');
+Route::resource('dashboard', 'DashboardController')->middleware('auth');
+Route::resource('funcionario', 'FuncionarioController')->middleware('auth');
+Route::resource('peca', 'PecaController')->middleware('auth');
+Route::resource('servico', 'ServicoController')->middleware('auth');
+Route::resource('utilizador', 'UtilizadorController')->middleware('auth');
 

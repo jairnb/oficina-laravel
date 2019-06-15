@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Client;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
-class ClientController extends Controller
+class UtilizadorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::latest('created_at')->get();
-        return view('sistema.client.index', compact('clients'));
+        $utilizadores = User::latest('created_at')->get();
+        return view('sistema.utilizador.index', compact('utilizadores'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('sistema.client.create');
+        return view('sistema.utilizador.create');
     }
 
     /**
@@ -34,11 +35,17 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $data)
     {
-        $data = $request->all();
-        Client::create($data);
-        return redirect('client'); 
+        
+        User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'type' => $data['type'],
+        ]);
+       
+        return redirect('utilizador');
     }
 
     /**

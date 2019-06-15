@@ -6,9 +6,9 @@
     <h1>Clientes</h1>
 @stop
 
-@section('meta-data')
+{{-- @section('meta-data')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-@stop
+@stop --}}
 
 @section('content')
     
@@ -16,10 +16,10 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-             <button class="btn btn-info d-block" data-toggle="modal" data-target="#createClient">
+             {{-- <button class="btn btn-info d-block" data-toggle="modal" data-target="#createClient">
                 <i class="fa fa-plus"></i> Adicionar Cliente
-            </button>           
-            {{-- <a href="{{ route('client.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> Adicionar Cliente</a> --}}
+            </button>            --}}
+            <a href="{{ route('client.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> Adicionar Cliente</a>
         </div>
 
         <div class="box-body">
@@ -75,7 +75,7 @@
     </div>
 </div>
 
-@include('sistema.client.create')
+{{-- @include('sistema.client.create') --}}
 @include('sistema.client.details')
 
 
@@ -97,12 +97,12 @@
         })
     </script>
 
-    <script> 
+    {{-- <script> 
         $("#save-client").click(function (e) { e.preventDefault();
-            $.ajaxSetup({                
-                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }                
-            });
+            // $.ajaxSetup({                
+            // });
             $.ajax({
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },                
                 type: 'POST',
                 url: '{{ url('client') }}',
                 data: $('#clientForm').serialize(), 
@@ -112,5 +112,5 @@
                 }
             });
         })
-    </script>
+    </script> --}}
 @stop
