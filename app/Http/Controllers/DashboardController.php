@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Client;
+use App\Funcionarios;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -13,7 +17,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('sistema.dashboard.index');
+        $clients = DB::table('clients')->count();
+        $users = DB::table('users')->count();
+        $funcionarios = DB::table('funcionarios')->count();
+        return view('sistema.dashboard.index', compact('clients', 'users', 'funcionarios'));
     }
 
     /**

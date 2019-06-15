@@ -1,5 +1,7 @@
+
 body{
     margin-top: 86px!important;
+    background-image: url(pintura.jpg)!important;
 }
 
 #system_login{
@@ -8,6 +10,7 @@ body{
     background-color:#96a4a5;
     color: white;
     border: 2px rgb(230, 73, 58) solid;
+    background-image: url(img/logo.png);
 }
 
 #system_login:hover{
@@ -17,10 +20,115 @@ body{
     
 }
 
+.parallax {
+ background-color: rgba(192, 192, 192, 0.445); 
+  height: 400px;
+  
+  
+ 
+}
+
+
 .link{
     color:rgb(230, 73, 58)!important;
     
 }.link:hover{
     color: #96a4a5!important;
 }
+.servicType{
+    background-repeat: no-repeat;
+    background-size: auto;
+   
+    
+    
+}
+.buttonService{
+    font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: rgb(230, 73, 58);
+  width: 100%;
+  border: 2px solid #96a4a5;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  
+}
+.buttonService:hover{
+    background: #96a4a5;
+    border: 2px solid rgb(230, 73, 58);
+     
+}
+.linkService:hover img,.buttonService:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    position: relative;
+}
+.linkService img{
+    height: 270px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    
+}
+#division{
+    border: 1px solid #96a4a5;
+    
+}
 
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:500px;
+    width:600px;
+}.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:500px;
+    width:600px;
+}
+
+.contatButton{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: rgb(230, 73, 58);
+  width: 100%;
+  border: 2px solid #96a4a5;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 0px;
+}
+a i.fa-twitter{
+    color: #007bff;
+}
+a i.fa-facebook-square{
+    color: #004085;
+}
+a i.fa-instagram{
+    color: tomato;
+}
+
+a i.fa:hover{
+    color:rgb(230, 73, 58);
+}
+.page-footer{
+    background-color: #96a4a5;
+}
+.footer-copyright{
+    background: rgb(230, 73, 58);
+}
+.radius{
+    border-radius: 0px;
+    padding: 10px 5px;
+}
+.contatButton:hover{
+    background: #96a4a5;
+    border: 2px solid rgb(230, 73, 58);
+}
