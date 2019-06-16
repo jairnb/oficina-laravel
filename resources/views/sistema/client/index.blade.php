@@ -44,11 +44,12 @@
                             <a href="{{url('client/'.$client->id.'/edit')}}"> <i class="fa fa-pencil-square-o oficina-icone-atu"></i> </a>
                             
                             <a href="#" data-toggle="modal" data-target="#detailClient"> <i class="fa fa-eye"></i> </a>
+                            <a href="#" data-toggle="modal" data-target="#detailClient"> <i class="fa fa-trash oficina-icone-del"></i> </a>
                             
                             <form action="{{ url('client/'.$client->id)}}" class="pull-right" method="post">
                                 {{csrf_field()}}
                                 {{ method_field('DELETE') }}
-                                <button type="submit"> <i class="fa fa-trash oficina-icone-del"></i> </button>
+                                {{-- <button type="submit"> <i class="fa fa-trash oficina-icone-del"></i> </button> --}}
                             </form>
                         </td>
                     </tr>
